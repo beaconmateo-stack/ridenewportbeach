@@ -172,7 +172,7 @@ nav {
 .pricing {
   padding: 80px 24px;
   text-align: center;
-  background: var(--bg);
+  background: #1c1c1e;
   color: var(--text);
 }
 .pricing h2 {
@@ -200,15 +200,15 @@ nav {
   margin: 0 auto;
 }
 .price-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: #2c2c2e;
+  border: 1px solid #3a3a3c;
   border-radius: 16px;
   padding: 32px 24px;
   position: relative;
 }
 .price-card.featured {
   border-color: var(--accent);
-  background: linear-gradient(180deg, #1a0808 0%, var(--surface) 100%);
+  background: linear-gradient(180deg, #3a2020 0%, #2c2c2e 100%);
 }
 .price-card .badge {
   position: absolute;

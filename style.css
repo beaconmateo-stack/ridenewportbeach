@@ -439,8 +439,11 @@ footer p {
 @media (max-width: 480px) {
   /* Nav */
   .nav-inner { padding: 12px 16px; }
-  .logo { font-size: 22px; letter-spacing: 3px; }
-  .nav-cta { font-size: 13px; padding: 6px 16px; }
+  .logo { font-size: 18px; letter-spacing: 2px; }
+  .logo .gap { margin: 0 2px; }
+  .nav-right { gap: 12px; }
+  .nav-link { display: none; }
+  .nav-cta { font-size: 12px; padding: 6px 14px; }
 
   /* Hero */
   .hero { padding: 80px 16px 40px; }

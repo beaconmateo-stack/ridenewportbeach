@@ -105,9 +105,21 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
       </a>
       <a href="https://cal.com/ridenewportbeach" class="nav-cta">Book Now</a>
+      <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<div class="mobile-menu">
+  <a href="#pricing" onclick="this.parentElement.classList.remove('open')">Pricing</a>
+  <a href="#how" onclick="this.parentElement.classList.remove('open')">How It Works</a>
+  <a href="#bike" onclick="this.parentElement.classList.remove('open')">The Bike</a>
+  <a href="faq.html">FAQ</a>
+  <a href="https://instagram.com/ridenewportbeach" target="_blank" rel="noopener">@ridenewportbeach</a>
+  <a href="tel:+19492447824">Call or Text (949) 244-7824</a>
+</div>
 
 <section class="hero">
   <div class="hero-content">

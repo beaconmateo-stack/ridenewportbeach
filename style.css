@@ -543,6 +543,7 @@ footer p {
 /* Responsive — tablet */
 @media (max-width: 768px) {
   .nav-link { display: none; }
+  .nav-ig { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
   .mobile-menu { display: block; }

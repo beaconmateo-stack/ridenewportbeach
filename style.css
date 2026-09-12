@@ -8,8 +8,8 @@ html { scroll-behavior: smooth; }
   --border: #2a2a2a;
   --text: #f5f5f7;
   --text-secondary: #a1a1a6;
-  --accent: #ab4943;
-  --accent-hover: #c25550;
+  --accent: #c25550;
+  --accent-hover: #d4625d;
   --white: #ffffff;
 }
 
@@ -47,7 +47,7 @@ nav {
   text-decoration: none;
   letter-spacing: 4px;
 }
-.logo .ride { color: var(--accent); }
+.logo .ride { color: #ab4943; }
 .logo .gap { margin: 0 3px; }
 .logo span:not(.ride):not(.gap) { color: #202020; }
 .nav-right {
@@ -403,7 +403,7 @@ footer {
   margin-bottom: 8px;
   color: #1d1d1f;
 }
-.footer-brand .ride { color: var(--accent); }
+.footer-brand .ride { color: #ab4943; }
 .footer-brand .gap { margin: 0 3px; }
 footer p {
   font-size: 13px;

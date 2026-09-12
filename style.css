@@ -52,6 +52,14 @@ nav {
   align-items: center;
   gap: 16px;
 }
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--white); }
 .nav-ig {
   color: var(--text-secondary);
   transition: color 0.2s;

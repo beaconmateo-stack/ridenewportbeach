@@ -1,5 +1,5 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
 :root {
   --bg: #0a0a0a;
@@ -427,6 +427,7 @@ footer p {
 
 /* Responsive — tablet */
 @media (max-width: 768px) {
+  .nav-link { display: none; }
   .hero { padding: 96px 20px 52px; }
   .hero-logo { width: 150px; height: 150px; }
   .bike-layout { grid-template-columns: 1fr; gap: 32px; text-align: center; }

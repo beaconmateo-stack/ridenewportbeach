@@ -8,8 +8,8 @@ html { scroll-behavior: smooth; }
   --border: #2a2a2a;
   --text: #f5f5f7;
   --text-secondary: #a1a1a6;
-  --accent: #ff3b30;
-  --accent-hover: #ff5147;
+  --accent: #ab4943;
+  --accent-hover: #c25550;
   --white: #ffffff;
 }
 
@@ -26,10 +26,10 @@ nav {
   top: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(10,10,10,0.85);
+  background: rgba(240,224,192,0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #d8c8a0;
 }
 .nav-inner {
   max-width: 960px;
@@ -40,13 +40,16 @@ nav {
   align-items: center;
 }
 .logo {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--white);
+  font-family: 'Oswald', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #202020;
   text-decoration: none;
-  letter-spacing: 1px;
+  letter-spacing: 4px;
 }
-.logo span { color: var(--accent); }
+.logo .ride { color: var(--accent); }
+.logo .gap { margin: 0 3px; }
+.logo span:not(.ride):not(.gap) { color: #202020; }
 .nav-right {
   display: flex;
   align-items: center;
@@ -55,17 +58,17 @@ nav {
 .nav-link {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #6e5c3a;
   text-decoration: none;
   transition: color 0.2s;
 }
-.nav-link:hover { color: var(--white); }
+.nav-link:hover { color: #202020; }
 .nav-ig {
-  color: var(--text-secondary);
+  color: #6e5c3a;
   transition: color 0.2s;
   display: flex;
 }
-.nav-ig:hover { color: var(--white); }
+.nav-ig:hover { color: #202020; }
 .nav-cta {
   font-size: 14px;
   font-weight: 600;
@@ -393,13 +396,15 @@ footer {
 }
 .footer-inner { max-width: 960px; margin: 0 auto; }
 .footer-brand {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4px;
   margin-bottom: 8px;
   color: #1d1d1f;
 }
-.footer-brand span { color: var(--accent); }
+.footer-brand .ride { color: var(--accent); }
+.footer-brand .gap { margin: 0 3px; }
 footer p {
   font-size: 13px;
   color: #6e6e73;
@@ -434,7 +439,7 @@ footer p {
 @media (max-width: 480px) {
   /* Nav */
   .nav-inner { padding: 12px 16px; }
-  .logo { font-size: 16px; }
+  .logo { font-size: 22px; letter-spacing: 3px; }
   .nav-cta { font-size: 13px; padding: 6px 16px; }
 
   /* Hero */

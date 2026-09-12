@@ -128,7 +128,14 @@
     <p class="hero-sub">Electric bike rentals. Delivered straight to you.</p>
     <div class="hero-actions">
       <a href="https://cal.com/ridenewportbeach" class="btn btn-primary">Book Now</a>
-      <a href="tel:+19492447824" class="btn btn-secondary">Call or Text</a>
+      <div class="phone-dropdown">
+        <span class="btn btn-secondary phone-dropdown-btn" onclick="togglePhoneMenu(this)">Call or Text</span>
+        <div class="phone-dropdown-menu">
+          <button onclick="copyPhone(this)"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Number</button>
+          <a href="tel:+19492447824"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+          <a href="sms:+19492447824"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text</a>
+        </div>
+      </div>
     </div>
     <div class="hero-features">
       <div class="hero-feature">
@@ -241,7 +248,14 @@
   <h2>Ready to Ride?</h2>
   <div class="cta-actions">
     <a href="https://cal.com/ridenewportbeach" class="btn btn-primary btn-lg">Book Now</a>
-    <a href="tel:+19492447824" class="btn btn-secondary btn-lg">Call or Text (949) 244-7824</a>
+    <div class="phone-dropdown">
+      <span class="btn btn-secondary btn-lg phone-dropdown-btn" onclick="togglePhoneMenu(this)">Call or Text (949) 244-7824</span>
+      <div class="phone-dropdown-menu">
+        <button onclick="copyPhone(this)"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Number</button>
+        <a href="tel:+19492447824"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+        <a href="sms:+19492447824"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -254,6 +268,27 @@
     <p class="footer-ig"><a href="https://instagram.com/ridenewportbeach" target="_blank" rel="noopener">@ridenewportbeach</a></p>
   </div>
 </footer>
+
+<script>
+function togglePhoneMenu(btn) {
+  var dd = btn.closest('.phone-dropdown');
+  var wasOpen = dd.classList.contains('open');
+  document.querySelectorAll('.phone-dropdown.open').forEach(function(el) { el.classList.remove('open'); });
+  if (!wasOpen) dd.classList.add('open');
+}
+function copyPhone(btn) {
+  navigator.clipboard.writeText('(949) 244-7824').then(function() {
+    var original = btn.innerHTML;
+    btn.innerHTML = '<span class="dd-copied">Copied!</span>';
+    setTimeout(function() { btn.innerHTML = original; btn.closest('.phone-dropdown').classList.remove('open'); }, 1200);
+  });
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.phone-dropdown')) {
+    document.querySelectorAll('.phone-dropdown.open').forEach(function(el) { el.classList.remove('open'); });
+  }
+});
+</script>
 
 </body>
 </html>

@@ -485,6 +485,61 @@ footer p {
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu a:hover { color: var(--accent); }
 
+/* Phone dropdown */
+.phone-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.phone-dropdown-btn {
+  cursor: pointer;
+}
+.phone-dropdown-menu {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  min-width: 200px;
+  z-index: 200;
+  overflow: hidden;
+}
+.phone-dropdown.open .phone-dropdown-menu { display: block; }
+.phone-dropdown-menu a,
+.phone-dropdown-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1d1d1f;
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #e5e5e7;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.phone-dropdown-menu a:last-child,
+.phone-dropdown-menu button:last-child { border-bottom: none; }
+.phone-dropdown-menu a:hover,
+.phone-dropdown-menu button:hover { background: #f5f5f7; }
+.phone-dropdown-menu .dd-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #6e6e73;
+}
+.phone-dropdown-menu .dd-copied {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* Responsive — tablet */
 @media (max-width: 768px) {
   .nav-link { display: none; }

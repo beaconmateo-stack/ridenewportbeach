@@ -554,31 +554,21 @@ footer p {
   .bike-image img { max-width: 420px; margin: 0 auto; }
   .map-container .map-iframe { display: none; }
   .map-static-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     text-decoration: none;
-    background: linear-gradient(135deg, #e8f4e8 0%, #d4e8f0 50%, #e8e4d8 100%);
     border-radius: 16px;
-    min-height: 200px;
-    padding: 40px 24px;
+    overflow: hidden;
   }
-  .map-static-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .map-static-label {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1d1d1f;
+  .map-static-card iframe {
+    display: block;
   }
   .map-static-link {
+    display: block;
+    text-align: center;
     font-size: 14px;
     font-weight: 500;
     color: var(--accent);
-    margin-top: 4px;
+    padding: 12px 0;
   }
   .btn-lg { padding: 14px 28px; font-size: 16px; }
 }

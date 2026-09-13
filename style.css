@@ -411,7 +411,7 @@ footer p {
   margin-bottom: 4px;
 }
 .footer-phone {
-  margin-top: 12px;
+  margin-top: 0;
 }
 .footer-phone a {
   color: var(--accent);

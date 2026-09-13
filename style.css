@@ -410,12 +410,15 @@ footer p {
   color: #6e6e73;
   margin-bottom: 4px;
 }
+.footer-phone {
+  margin-top: 12px;
+}
 .footer-phone a {
   color: var(--accent);
   text-decoration: none;
 }
 .footer-ig {
-  margin-top: 4px;
+  margin-top: 12px;
 }
 .footer-ig a {
   color: #6e6e73;
@@ -424,7 +427,7 @@ footer p {
   transition: color 0.2s;
 }
 .footer-ig a:hover { color: var(--accent); }
-.footer-links { margin-top: 8px; }
+.footer-links { margin-top: 12px; }
 .footer-links a {
   color: #6e6e73;
   text-decoration: none;

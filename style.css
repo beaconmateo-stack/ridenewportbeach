@@ -552,23 +552,9 @@ footer p {
   .hero-logo { width: 150px; height: 150px; }
   .bike-layout { grid-template-columns: 1fr; gap: 32px; text-align: center; }
   .bike-image img { max-width: 420px; margin: 0 auto; }
-  .map-container .map-iframe { display: none; }
-  .map-static-card {
-    display: block;
-    border-radius: 16px;
-    overflow: hidden;
-  }
-  .map-static-card iframe {
-    display: block;
-  }
-  .map-static-link {
-    display: block;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--accent);
-    padding: 12px 0;
-    text-decoration: none;
+  .map-container .map-iframe {
+    pointer-events: none;
+    height: 300px;
   }
   .btn-lg { padding: 14px 28px; font-size: 16px; }
 }

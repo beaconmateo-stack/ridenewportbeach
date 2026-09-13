@@ -24,7 +24,6 @@
 <link rel="canonical" href="https://ridenewportbeach.com">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@700&display=swap" rel="stylesheet">
@@ -241,10 +240,6 @@
       title="Ride Newport Beach delivery area"
       class="map-iframe">
     </iframe>
-    <div class="map-static-card">
-      <div id="map-mobile" style="width:100%; height:280px; border-radius:16px;"></div>
-      <a href="https://maps.apple.com/?address=Newport+Beach+Peninsula,+Newport+Beach,+CA&ll=33.6050,-117.9295&z=13" target="_blank" rel="noopener" class="map-static-link">View on Apple Maps →</a>
-    </div>
   </div>
 </section>
 
@@ -294,28 +289,6 @@ document.addEventListener('click', function(e) {
 });
 </script>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-(function() {
-  var mapEl = document.getElementById('map-mobile');
-  if (!mapEl) return;
-  if (window.innerWidth > 768) return;
-  var map = L.map('map-mobile', {
-    zoomControl: false,
-    dragging: false,
-    touchZoom: false,
-    scrollWheelZoom: false,
-    doubleClickZoom: false,
-    boxZoom: false,
-    keyboard: false,
-    attributionControl: false
-  }).setView([33.6050, -117.9295], 13);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19
-  }).addTo(map);
-  L.marker([33.6050, -117.9295]).addTo(map);
-})();
-</script>
 
 </body>
 </html>

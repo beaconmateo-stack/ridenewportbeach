@@ -10,15 +10,16 @@ body {
 
 .waiver-header {
   background: rgba(240,224,192,0.95);
-  padding: 48px 24px 32px;
+  padding: 36px 24px 32px;
   text-align: center;
 }
 .brand {
   font-family: 'Oswald', sans-serif;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 16px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 .brand .ride { color: #ab4943; }
 .brand .gap { margin: 0 2px; }

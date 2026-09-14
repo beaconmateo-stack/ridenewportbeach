@@ -118,7 +118,9 @@ function submitWaiver() {
   localStorage.setItem('rnb_waivers', JSON.stringify(waivers));
 
   // Send waiver via EmailJS with signature image
-  var dateStr = new Date(date).toLocaleDateString('en-US', {
+  var dateParts = date.split('-');
+  var localDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+  var dateStr = localDate.toLocaleDateString('en-US', {
     weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
   });
 

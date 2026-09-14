@@ -60,6 +60,17 @@ function clearSignature() {
   document.getElementById('rentalDate').value = str;
 })();
 
+// --- Phone formatting ---
+document.getElementById('riderPhone').addEventListener('input', function(e) {
+  var digits = e.target.value.replace(/\D/g, '').substring(0, 10);
+  var formatted = '';
+  if (digits.length > 0) formatted = '(' + digits.substring(0, 3);
+  if (digits.length >= 3) formatted += ') ';
+  if (digits.length > 3) formatted += digits.substring(3, 6);
+  if (digits.length >= 6) formatted += '-' + digits.substring(6);
+  e.target.value = formatted;
+});
+
 // --- Validation & Submit ---
 function submitWaiver() {
   var msg = document.getElementById('statusMsg');

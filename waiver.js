@@ -117,33 +117,36 @@ function submitWaiver() {
   waivers.push(record);
   localStorage.setItem('rnb_waivers', JSON.stringify(waivers));
 
-  // Send waiver confirmation to Ride Newport Beach via email
+  // Send waiver via EmailJS with signature image
   var dateStr = new Date(date).toLocaleDateString('en-US', {
     weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
   });
-  var subject = encodeURIComponent('Waiver Signed — ' + name);
-  var body = encodeURIComponent(
-    'Rental Waiver Signed\n\n' +
-    'Name: ' + name + '\n' +
-    'Email: ' + email + '\n' +
-    'Phone: ' + phone + '\n' +
-    'Rental Date: ' + dateStr + '\n' +
-    'Signed At: ' + now.toLocaleString() + '\n\n' +
-    'All terms accepted. Signature captured on file.'
-  );
-  // Open email in background — silent send via hidden iframe mailto
-  var mailLink = document.createElement('a');
-  mailLink.href = 'mailto:ridenewportbeach@gmail.com?subject=' + subject + '&body=' + body;
-  mailLink.click();
 
-  // Show confirmation
-  document.getElementById('waiverForm').style.display = 'none';
-  var conf = document.getElementById('confirmation');
-  conf.style.display = 'block';
-  document.getElementById('confirmDetails').textContent =
-    name + ' — ' + dateStr;
+  var btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  emailjs.send('service_w83dybb', 'template_pzafelw', {
+    name: name,
+    email: email,
+    phone: phone,
+    rental_date: dateStr,
+    signed_at: now.toLocaleString(),
+    signature: sigData
+  }).then(function() {
+    // Show confirmation
+    document.getElementById('waiverForm').style.display = 'none';
+    var conf = document.getElementById('confirmation');
+    conf.style.display = 'block';
+    document.getElementById('confirmDetails').textContent =
+      name + ' — ' + dateStr;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, function(error) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    btn.disabled = false;
+    btn.textContent = 'Submit Waiver';
+    console.error('EmailJS error:', error);
+  });
 }
 
 function resetForm() {

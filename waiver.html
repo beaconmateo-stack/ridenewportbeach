@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Rental Waiver — Ride Newport Beach</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="waiver.css">
+</head>
+<body>
+
+<div class="waiver-header">
+  <div class="brand"><span class="ride">RIDE</span><span class="gap"></span>NEWPORT<span class="gap"></span>BEACH</div>
+  <h1>Rental Waiver &amp; Agreement</h1>
+  <p class="subtitle">Please review and sign below before your ride.</p>
+</div>
+
+<form id="waiverForm" class="waiver-form" onsubmit="return false;">
+
+  <div class="field-group">
+    <label for="riderName">Full Name</label>
+    <input type="text" id="riderName" required autocomplete="name" placeholder="As shown on your ID">
+  </div>
+
+  <div class="field-group">
+    <label for="riderEmail">Email</label>
+    <input type="email" id="riderEmail" required autocomplete="email" placeholder="For your receipt">
+  </div>
+
+  <div class="field-group">
+    <label for="riderPhone">Phone</label>
+    <input type="tel" id="riderPhone" required autocomplete="tel" placeholder="In case we need to reach you">
+  </div>
+
+  <div class="field-group">
+    <label for="rentalDate">Rental Date</label>
+    <input type="date" id="rentalDate" required>
+  </div>
+
+  <div class="terms-scroll" id="termsBox">
+    <h2>Terms &amp; Waiver</h2>
+
+    <h3>1. Eligibility</h3>
+    <p>All riders must be at least 18 years of age. A valid government-issued photo ID is required at the time of delivery.</p>
+
+    <h3>2. Assumption of Risk</h3>
+    <p>Riding an electric bicycle involves inherent risks, including falls, collisions, equipment failure, road hazards, and interactions with motor vehicles, pedestrians, and other cyclists. These risks can result in serious bodily injury or death. You voluntarily assume all risks associated with the use of our e-bikes.</p>
+
+    <h3>3. Rider Responsibilities</h3>
+    <p>You agree to: obey all traffic laws; ride safely and sober; not let others operate the bike; not carry passengers; return the bike in its received condition; and report any accidents or damage immediately by calling (949) 244-7824.</p>
+
+    <h3>4. Helmet Policy</h3>
+    <p>A helmet is provided and must be worn at all times while riding. Failure to wear it may void liability protections.</p>
+
+    <h3>5. Financial Responsibility</h3>
+    <p>You are responsible for any damage, loss, or theft of the e-bike and accessories during the rental. Replacement value: up to $2,000.</p>
+
+    <h3>6. Rental Period &amp; Late Returns</h3>
+    <p>Late returns incur charges at $20 per additional hour.</p>
+
+    <h3>7. Cancellation &amp; Weather</h3>
+    <p>Full refund if cancelled 2+ hours before rental. Free reschedule for rain or unsafe conditions.</p>
+
+    <h3>8. Limitation of Liability</h3>
+    <p>To the fullest extent permitted by law, Ride Newport Beach LLC shall not be liable for any injury, death, property damage, or other loss arising from use of our e-bikes.</p>
+
+    <h3>9. Indemnification</h3>
+    <p>You agree to indemnify and hold harmless Ride Newport Beach LLC from all claims arising from your use of the e-bike.</p>
+
+    <h3>10. Waiver of Claims</h3>
+    <p>You waive all claims against Ride Newport Beach LLC for injury, death, or property damage during the rental period, regardless of cause including negligence.</p>
+
+    <h3>11. Governing Law</h3>
+    <p>Governed by California law. Disputes resolved in Orange County courts.</p>
+  </div>
+
+  <div class="checkbox-group">
+    <label class="check-label">
+      <input type="checkbox" id="agreeTerms" required>
+      <span>I have read and agree to the Terms &amp; Waiver above.</span>
+    </label>
+    <label class="check-label">
+      <input type="checkbox" id="agreeAge" required>
+      <span>I confirm I am 18 years of age or older.</span>
+    </label>
+    <label class="check-label">
+      <input type="checkbox" id="agreeRisk" required>
+      <span>I understand and accept the risks of riding an electric bicycle.</span>
+    </label>
+  </div>
+
+  <div class="signature-section">
+    <label>Signature</label>
+    <p class="sig-hint">Sign with your finger below.</p>
+    <div class="sig-wrapper">
+      <canvas id="sigCanvas"></canvas>
+      <button type="button" class="sig-clear" onclick="clearSignature()">Clear</button>
+    </div>
+  </div>
+
+  <button type="button" class="submit-btn" id="submitBtn" onclick="submitWaiver()">
+    Submit Waiver
+  </button>
+
+  <div class="status-msg" id="statusMsg"></div>
+</form>
+
+<div class="confirmation" id="confirmation" style="display:none;">
+  <div class="confirm-icon">✓</div>
+  <h2>Waiver Signed</h2>
+  <p id="confirmDetails"></p>
+  <p class="confirm-sub">A copy has been saved. Enjoy your ride!</p>
+  <button class="new-btn" onclick="resetForm()">New Waiver</button>
+</div>
+
+<script src="waiver.js"></script>
+</body>
+</html>

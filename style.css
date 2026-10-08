@@ -110,6 +110,8 @@ nav {
   line-height: 1.5;
 }
 .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero-buy-link { display: inline-block; margin-top: 16px; color: var(--accent); font-size: 15px; font-weight: 600; text-decoration: none; }
+.hero-buy-link:hover { text-decoration: underline; }
 .hero-features {
   display: flex;
   justify-content: center;
